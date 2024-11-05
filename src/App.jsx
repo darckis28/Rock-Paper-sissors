@@ -1,4 +1,4 @@
-import { useState } from "react";
+// import { useState } from "react";
 import ContentPlay from "./components/ContentPlay";
 import Modal from "./components/Modal";
 
@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <main
-        className="w-full h-screen text-white font-barlow"
+        className="w-full h-screen p-8 text-white font-barlow overflow-hidden"
         style={{
           background:
             "linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%))",

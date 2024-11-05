@@ -21,7 +21,7 @@ export default {
         "Lizard-Gradient":
           "linear-gradient(hsl(261, 73%, 60%), hsl(261, 72%, 63%))",
         "Radial-Gradient":
-          "radial-gradient(circle at top, hsl(214, 47%, 23%), hsl(237, 49%, 15%))",
+          "linear-gradient(hsl(214, 47%, 23%), hsl(237, 49%, 15%))",
         Cyan: "linear-gradient(hsl(189, 59%, 53%), hsl(189, 58%, 57%))",
       },
     },
