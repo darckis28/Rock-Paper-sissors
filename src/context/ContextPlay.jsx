@@ -43,8 +43,7 @@ function ContextPlay({ children }) {
               phase: 0,
               pick: "",
               enemyPick: "",
-              result: "",
-              showModal: true,
+              result: ""
             })
           );
           return { ...state, result: "win", score: state.score + 5, phase: 3 };
@@ -60,7 +59,7 @@ function ContextPlay({ children }) {
             pick: "",
             enemyPick: "",
             result: "",
-            showModal: true,
+           
           })
         );
         return {
@@ -69,7 +68,6 @@ function ContextPlay({ children }) {
           pick: "",
           enemyPick: "",
           result: "",
-          showModal: true,
         };
     }
   }
