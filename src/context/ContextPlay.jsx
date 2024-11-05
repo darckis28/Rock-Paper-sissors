@@ -4,14 +4,17 @@ import { createContext, useReducer } from "react";
 export const contextInit = createContext(null);
 
 function ContextPlay({ children }) {
-  const [state, dispach] = useReducer(reducer, {
-    showModal: true,
-    phase: 0,
-    score: 0,
-    pick: "",
-    enemyPick: "",
-    result: "",
-  });
+  const [state, dispach] = useReducer(
+    reducer,
+    JSON.parse(localStorage.getItem("history")) || {
+      showModal: false,
+      phase: 0,
+      score: 0,
+      pick: "",
+      enemyPick: "",
+      result: "",
+    }
+  );
 
   function reducer(state, action) {
     switch (action.type) {
@@ -32,10 +35,34 @@ function ContextPlay({ children }) {
           (state.pick === "paper" && state.enemyPick === "rock") ||
           (state.pick === "sicssor" && state.enemyPick === "paper")
         ) {
+          localStorage.setItem(
+            "history",
+            JSON.stringify({
+              ...state,
+              score: state.score + 5,
+              phase: 0,
+              pick: "",
+              enemyPick: "",
+              result: "",
+              showModal: true,
+            })
+          );
           return { ...state, result: "win", score: state.score + 5, phase: 3 };
         }
         return { ...state, result: "lose", phase: 3 };
       case "RESTART":
+        localStorage.setItem(
+          "history",
+          JSON.stringify({
+            ...state,
+            score: state.score + 5,
+            phase: 0,
+            pick: "",
+            enemyPick: "",
+            result: "",
+            showModal: true,
+          })
+        );
         return {
           ...state,
           phase: 0,

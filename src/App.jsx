@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <main
-        className="w-full h-screen p-8 text-white font-barlow overflow-hidden"
+        className="w-full h-screen p-8 text-white font-barlow overflow-x-hidden"
         style={{
           background:
             "linear-gradient(to bottom, hsl(214, 47%, 23%), hsl(237, 49%, 15%))",
